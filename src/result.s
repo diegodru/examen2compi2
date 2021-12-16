@@ -19,10 +19,10 @@ bc1f true0
 bc1t false1
 j end2
 true0: 
-li.s $f11, 1
+li.s $f11, 1.0
 j end
 false1:
-li.s $f11, 0
+li.s $f11, 0.0
 j end
 l.s $f12, 0($sp)
 l.s $f13, 4($sp)

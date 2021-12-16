@@ -207,8 +207,8 @@ void LteExpr::genCode(Code &code){
   ss << "c.lt.s " <<  leftCode.place << ", " << rightCode.place << '\n';
   ss << "bc1t " << code.trueLabel << "\nbc1f " << code.falseLabel << '\n';
   ss << "j " << end << "\n";
-  ss << code.trueLabel << ": \nli.s " << code.place << ", 1\nj end\n";
-  ss << code.falseLabel << ":\nli.s " << code.place << ", 0\nj end\n";
+  ss << code.trueLabel << ": \nli.s " << code.place << ", 1.0\nj end\n";
+  ss << code.falseLabel << ":\nli.s " << code.place << ", 0.0\nj end\n";
   code.code = ss.str();
 }
 
@@ -228,8 +228,8 @@ void EqExpr::genCode(Code &code){
   ss << "c.eq.s " <<  leftCode.place << ", " << rightCode.place << '\n';
   ss << "bc1t " << code.trueLabel << "\nbc1f " << code.falseLabel << '\n';
   ss << "j " << end << "\n";
-  ss << code.trueLabel << ": \nli.s " << code.place << ", 1\nj end\n";
-  ss << code.falseLabel << ":\nli.s " << code.place << ", 0\nj end\n";
+  ss << code.trueLabel << ": \nli.s " << code.place << ", 1.0\nj end\n";
+  ss << code.falseLabel << ":\nli.s " << code.place << ", 0.0\nj end\n";
   code.code = ss.str();
 }
 
