@@ -186,8 +186,8 @@ void GteExpr::genCode(Code &code){
   ss << "c.le.s " <<  leftCode.place << ", " << rightCode.place << '\n';
   ss << "bc1f " << code.trueLabel << "\nbc1t " << code.falseLabel << '\n';
   ss << "j " << end << "\n";
-  ss << code.trueLabel << ": \nli.s " << code.place << ", 1\nj end\n";
-  ss << code.falseLabel << ":\nli.s " << code.place << ", 0\nj end\n";
+  ss << code.trueLabel << ": \nli.s " << code.place << ", 1.0\nj end\n";
+  ss << code.falseLabel << ":\nli.s " << code.place << ", 0.0\nj end\n";
   code.code = ss.str();
 }
 
