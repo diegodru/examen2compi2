@@ -272,7 +272,7 @@ string MethodDefinitionStatement::genCode(){
   ss << id << ":\n";
   int i = 0;
   for(auto p : params){
-    ss << "swc1 $a" << i++ << ", " << globalStackPointer << "($sp)\n";
+    ss << "sw $a" << i++ << ", " << globalStackPointer << "($sp)\n";
   }
   for(auto s : stmts){
     ss << s->genCode();
