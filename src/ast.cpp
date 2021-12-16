@@ -47,12 +47,12 @@ extern Asm assemblyFile;
 
 int globalStackPointer = 0;
 
-unordered_map<string, int> labels;
 unordered_map<string, int> variables;
 
+int labelCounter = 0;
 string getLabel(string prefix){
   stringstream ss;
-  ss << prefix << labels[prefix]++;
+  ss << prefix << labelCounter++;
   return ss.str();
 }
 
